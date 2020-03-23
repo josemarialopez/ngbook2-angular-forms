@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sku-form',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkuFormComponent implements OnInit {
 
+  control = new FormControl('sku', Validators.required);
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form: any) {
+    console.log('you submitted value:', form);
   }
 
 }
